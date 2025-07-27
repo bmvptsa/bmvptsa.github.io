@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events | Beachside Montessori PTSA</title>
+  <link rel="icon" type="image/jpeg" href="BMV PTSA Logo Blue Cropped.jpg" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #fff8e7, #e6f2ff);
+      color: #003366;
+    }
+    header {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+    header img {
+      max-height: 100px;
+      margin-bottom: 0.5rem;
+    }
+    .section {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #ffffff;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .cta {
+      background-color: #ffcc00;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 0.5rem;
+      margin-top: 2rem;
+    }
+    .cta a {
+      color: #003366;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    .social-icons a {
+      margin: 0 0.5rem;
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <script>
+    fetch('navbar.html')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.text();
+      })
+      .then(html => {
+        const navbarContainer = document.getElementById('navbar');
+        navbarContainer.innerHTML = html;
+        navbarContainer.querySelector('nav').style.width = '100%';
+        navbarContainer.querySelector('nav').style.boxSizing = 'border-box';
+      })
+      .catch(error => {
+        console.error('Error loading navbar:', error);
+        document.getElementById('navbar').innerHTML = '<nav style="background:#005fa3;color:white;text-align:center;padding:1rem;width:100%;box-sizing:border-box">Navbar failed to load</nav>';
+      });
+  </script>
+
+  <header>
+    <img src="BMV PTSA Logo Blue Cropped.jpg" alt="Beachside PTSA Logo" />
+    <h1>PTSA Events Calendar</h1>
+  </header>
+
+  <section class="section">
+    <h2>Upcoming Events</h2>
+    <p>We host a wide range of events throughout the year – from family fun nights and enrichment activities to fundraising drives and school celebrations.</p>
+
+    <h3>Stay In the Loop</h3>
+    <p>View our full calendar of upcoming events and activities at the link below:</p>
+
+    <div class="cta">
+      <p style="font-size: 1.4rem; font-weight: bold;">Visit the full calendar on Givebacks:</p>
+      <a href="https://bmv.givebacks.com/calendar/" target="_blank" rel="noopener noreferrer">Event Calendar</a>
+    </div>
+
+    <h2>Signature Events</h2>
+    <ul>
+      <li>🎃 Fall Festival</li>
+      <li>📚 Book Fair</li>
+      <li>🎨 Reflections Art Program</li>
+      <li>👨‍👩‍👧‍👦 Family Nights</li>
+    </ul>
+
+    <h2>Enrichment & Programs</h2>
+    <p>Beachside PTSA supports a range of programs to enhance student learning and well-being:</p>
+    <ul>
+      <li>✅ Academic support initiatives</li>
+      <li>🎤 Assemblies and cultural programs</li>
+      <li>📱 PTA Connected – Digital safety and wellness workshops</li>
+      <li>🧠 SEL resources and activities</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Beachside Montessori Village | Hollywood, FL | president@bmvptsa.org</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/groups/bmvptsa" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/bmv_ptsa/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      </a>
+    </div>
+    <p>&copy; 2025 Beachside PTSA. All rights reserved.</p>
+  </footer>
+</body>
+</html>
